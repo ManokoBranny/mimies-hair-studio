@@ -186,7 +186,6 @@
             object-fit: cover;
         }
 
-        /* Gallery caption hover effect */
         .gallery-caption {
             position: absolute;
             bottom: 0;
@@ -296,193 +295,246 @@
         }
 
         /* --------- RESPONSIVE TWEAKS --------- */
-        @media (max-width: 500px) {
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 16px 20px;
+            }
+
+            nav {
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                margin-top: 10px;
+            }
+
+            nav a {
+                margin: 5px 10px 0 0;
+                font-size: 14px;
+            }
+
+            .hero {
+                height: 60vh;
+                padding: 20px;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
             section {
                 padding: 40px 20px;
             }
+
+            .btn, button {
+                font-size: 14px;
+                padding: 10px 18px;
+            }
+
+            input, select, textarea {
+                font-size: 14px;
+                padding: 8px;
+            }
+
+            .services, .trust, .gallery {
+                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            }
+        }
+
+        @media (max-width: 500px) {
             .hero h1 {
-                font-size: 36px;
+                font-size: 24px;
+            }
+            .hero p {
+                font-size: 14px;
+            }
+            section {
+                padding: 30px 15px;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- ============================= -->
-    <!-- HEADER / NAVIGATION           -->
-    <!-- ============================= -->
-    <header>
-        <h2>LacyOva's Hair Studio</h2>
-        <nav>
-            <a href="#services">Services</a>
-            <a href="#trust-signals">Why Choose Us</a>
-            <a href="#gallery">Gallery</a>
-            <a href="#visit-us">Visit Us</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
+<!-- ============================= -->
+<!-- HEADER / NAVIGATION           -->
+<!-- ============================= -->
+<header>
+    <h2>LacyOva's Hair Studio</h2>
+    <nav>
+        <a href="#services">Services</a>
+        <a href="#trust-signals">Why Choose Us</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#visit-us">Visit Us</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
 
-    <!-- ============================= -->
-    <!-- HERO SECTION                  -->
-    <!-- ============================= -->
-    <div class="hero">
-        <div class="hero-overlay">
-            <h1>Feel Beautiful Every Day</h1>
-            <p>Professional styling, braids & treatments</p>
-            <a class="btn" href="#contact">Book Appointment</a>
+<!-- ============================= -->
+<!-- HERO SECTION                  -->
+<!-- ============================= -->
+<div class="hero">
+    <div class="hero-overlay">
+        <h1>Feel Beautiful Every Day</h1>
+        <p>Professional styling, braids & treatments</p>
+        <a class="btn" href="#contact">Book Appointment</a>
+    </div>
+</div>
+
+<!-- ============================= -->
+<!-- SERVICES SECTION              -->
+<!-- ============================= -->
+<section id="services">
+    <h2>Our Services</h2>
+    <div class="services">
+        <div class="service-card">
+            <h3>Hair Styling</h3>
+            <p>Modern cuts and styling for all occasions.</p>
+        </div>
+        <div class="service-card">
+            <h3>Braids & Weaves</h3>
+            <p>Protective styles done with care and precision.</p>
+        </div>
+        <div class="service-card">
+            <h3>Treatments</h3>
+            <p>Healthy hair treatments for growth and shine.</p>
         </div>
     </div>
+</section>
 
-    <!-- ============================= -->
-    <!-- SERVICES SECTION              -->
-    <!-- ============================= -->
-    <section id="services">
-        <h2>Our Services</h2>
-        <div class="services">
-            <div class="service-card">
-                <h3>Hair Styling</h3>
-                <p>Modern cuts and styling for all occasions.</p>
-            </div>
-            <div class="service-card">
-                <h3>Braids & Weaves</h3>
-                <p>Protective styles done with care and precision.</p>
-            </div>
-            <div class="service-card">
-                <h3>Treatments</h3>
-                <p>Healthy hair treatments for growth and shine.</p>
-            </div>
+<!-- ============================= -->
+<!-- TRUST SIGNALS SECTION         -->
+<!-- ============================= -->
+<section id="trust-signals">
+    <h2>Why Choose Us</h2>
+    <div class="trust">
+        <div class="trust-card">
+            <h3>5+ Years Experience</h3>
+            <p>Trusted hands with proven results</p>
         </div>
-    </section>
-
-    <!-- ============================= -->
-    <!-- TRUST SIGNALS SECTION         -->
-    <!-- ============================= -->
-    <section id="trust-signals">
-        <h2>Why Choose Us</h2>
-        <div class="trust">
-            <div class="trust-card">
-                <h3>5+ Years Experience</h3>
-                <p>Trusted hands with proven results</p>
-            </div>
-            <div class="trust-card">
-                <h3>Happy Clients</h3>
-                <p>Returning customers & referrals</p>
-            </div>
-            <div class="trust-card">
-                <h3>Clean & Hygienic</h3>
-                <p>Sanitised tools for every client</p>
-            </div>
-            <div class="trust-card">
-                <h3>Quality Products</h3>
-                <p>Professional-grade hair & nail care</p>
-            </div>
+        <div class="trust-card">
+            <h3>Happy Clients</h3>
+            <p>Returning customers & referrals</p>
         </div>
-    </section>
-
-    <!-- ============================= -->
-    <!-- GALLERY SECTION               -->
-    <!-- ============================= -->
-    <section id="gallery">
-        <h2>Our Work</h2>
-        <div class="gallery">
-            <div class="gallery-item">
-                <img src="images/tribal_braids.jpg" alt="Braided hairstyle">
-                <div class="gallery-caption">Tribal Braids · Neat & long-lasting</div>
-            </div>
-
-            <div class="gallery-item">
-                <img src="images/straight_up_hairstyle.jpg" alt="Natural hairstyle">
-                <div class="gallery-caption">Straight-Up Style · Clean finish</div>
-            </div>
-
-            <div class="gallery-item">
-                <img src="images/polygel_square shape_nail_type.jpeg" alt="Nail art design">
-                <div class="gallery-caption">Polygel Nails · Square shape</div>
-            </div>
-
-            <div class="gallery-item">
-                <img src="images/buff_and_shine.jpeg" alt="Manicure design">
-                <div class="gallery-caption">Buff & Shine · Natural glow</div>
-            </div>
+        <div class="trust-card">
+            <h3>Clean & Hygienic</h3>
+            <p>Sanitised tools for every client</p>
         </div>
-    </section>
+        <div class="trust-card">
+            <h3>Quality Products</h3>
+            <p>Professional-grade hair & nail care</p>
+        </div>
+    </div>
+</section>
 
-    <!-- ============================= -->
-    <!-- VISIT US SECTION              -->
-    <!-- ============================= -->
-    <section id="visit-us">
-        <h2>Visit Us</h2>
-        <p>
-            📍 Based in <strong>882 G Section, Botshabelo, Free State</strong>.<br>
-            Easy bookings · Friendly service · Local clients welcome.
-        </p>
-    </section>
+<!-- ============================= -->
+<!-- GALLERY SECTION               -->
+<!-- ============================= -->
+<section id="gallery">
+    <h2>Our Work</h2>
+    <div class="gallery">
+        <div class="gallery-item">
+            <img src="images/tribal_braids.jpg" alt="Braided hairstyle">
+            <div class="gallery-caption">Tribal Braids · Neat & long-lasting</div>
+        </div>
 
-    <!-- ============================= -->
-    <!-- CONTACT SECTION               -->
-    <!-- ============================= -->
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>Book your appointment or ask a question below.</p>
+        <div class="gallery-item">
+            <img src="images/straight_up_hairstyle.jpg" alt="Natural hairstyle">
+            <div class="gallery-caption">Straight-Up Style · Clean finish</div>
+        </div>
 
-        <form class="contact-form" id="contactForm">
-            <input id="name" type="text" placeholder="Your Name" required>
-            <input id="email" type="email" placeholder="Your Email" required>
-            <select id="service" required>
-                <option value="">Select Service</option>
-                <option value="Hair Styling">Hair Styling</option>
-                <option value="Braids & Weaves">Braids & Weaves</option>
-                <option value="Nail Installation">Nail Installation</option>
-            </select>
-            <input id="date" type="date" required>
-            <input id="time" type="time" required>
-            <button type="submit">Book Appointment</button>
-            <p id="formMessage" style="margin-top:10px; font-size:14px; color:green;"></p>
-        </form>
-    </section>
+        <div class="gallery-item">
+            <img src="images/polygel_square shape_nail_type.jpeg" alt="Nail art design">
+            <div class="gallery-caption">Polygel Nails · Square shape</div>
+        </div>
 
-    <!-- ============================= -->
-    <!-- FOOTER                        -->
-    <!-- ============================= -->
-    <footer>
-        <p>&copy; 2025 LacyOva Hair Studio. All rights reserved.</p>
-        <p style="font-size:12px; color:#ccc; margin-top:8px;">
-            Website designed by <strong>Manoko Langa</strong> · 
-            <a href="mailto:manokobranny@gmail.com">manokobranny@gmail.com</a>
-        </p>
-    </footer>
+        <div class="gallery-item">
+            <img src="images/buff_and_shine.jpeg" alt="Manicure design">
+            <div class="gallery-caption">Buff & Shine · Natural glow</div>
+        </div>
+    </div>
+</section>
 
-    <!-- ============================= -->
-    <!-- WHATSAPP BOOKING BUTTON       -->
-    <!-- ============================= -->
-    <a
-        href="https://wa.me/27629393115"
-        class="whatsapp-float"
-        target="_blank"
-        aria-label="Chat on WhatsApp"
+<!-- ============================= -->
+<!-- VISIT US SECTION              -->
+<!-- ============================= -->
+<section id="visit-us">
+    <h2>Visit Us</h2>
+    <p>
+        📍 Based in <strong>882 G Section, Botshabelo, Free State</strong>.<br>
+        Easy bookings · Friendly service · Local clients welcome.
+    </p>
+</section>
+
+<!-- ============================= -->
+<!-- CONTACT SECTION               -->
+<!-- ============================= -->
+<section id="contact">
+    <h2>Contact Us</h2>
+    <p>Book your appointment or ask a question below.</p>
+
+    <form class="contact-form" id="contactForm">
+        <input id="name" type="text" placeholder="Your Name" required>
+        <input id="email" type="email" placeholder="Your Email" required>
+        <select id="service" required>
+            <option value="">Select Service</option>
+            <option value="Hair Styling">Hair Styling</option>
+            <option value="Braids & Weaves">Braids & Weaves</option>
+            <option value="Nail Installation">Nail Installation</option>
+        </select>
+        <input id="date" type="date" required>
+        <input id="time" type="time" required>
+        <button type="submit">Book Appointment</button>
+        <p id="formMessage" style="margin-top:10px; font-size:14px; color:green;"></p>
+    </form>
+</section>
+
+<!-- ============================= -->
+<!-- FOOTER                        -->
+<!-- ============================= -->
+<footer>
+    <p>&copy; 2025 LacyOva Hair Studio. All rights reserved.</p>
+    <p style="font-size:12px; color:#ccc; margin-top:8px;">
+        Website designed by <strong>Manoko Langa</strong> · 
+        <a href="mailto:manokobranny@gmail.com">manokobranny@gmail.com</a>
+    </p>
+</footer>
+
+<!-- ============================= -->
+<!-- WHATSAPP BOOKING BUTTON       -->
+<!-- ============================= -->
+<a
+    href="https://wa.me/27629393115"
+    class="whatsapp-float"
+    target="_blank"
+    aria-label="Chat on WhatsApp"
+>
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="32"
+        height="32"
+        viewBox="0 0 24 24"
+        fill="white"
     >
-        <!-- WhatsApp SVG Icon -->
-        <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="32"
-            height="32"
-            viewBox="0 0 24 24"
-            fill="white"
-        >
-            <path d="M12.04 2C6.53 2 2 6.48 2 12c0 2.11.55 4.1 1.6 5.86L2 22l4.27-1.58A9.9 9.9 0 0 0 12.04 22C17.55 22 22 17.52 22 12S17.55 2 12.04 2zm5.66 13.54c-.24.68-1.42 1.3-1.97 1.38-.5.07-1.14.1-1.84-.12-.42-.13-.97-.31-1.67-.61-2.94-1.27-4.85-4.21-5-4.4-.15-.19-1.2-1.6-1.2-3.05s.76-2.16 1.03-2.46c.27-.3.6-.38.8-.38h.58c.18 0 .42-.07.66.5.24.57.82 2 .89 2.15.07.15.12.32.02.51-.1.19-.15.31-.3.48-.15.17-.32.38-.45.5-.15.15-.3.31-.13.6.17.29.76 1.25 1.63 2.02 1.12.99 2.07 1.3 2.36 1.44.29.15.46.12.63-.07.17-.19.73-.85.92-1.14.19-.29.38-.24.63-.15.25.1 1.6.76 1.87.9.27.14.45.21.52.32.07.11.07.65-.17 1.33z"/>
-        </svg>
-    </a>
+        <path d="M12.04 2C6.53 2 2 6.48 2 12c0 2.11.55 4.1 1.6 5.86L2 22l4.27-1.58A9.9 9.9 0 0 0 12.04 22C17.55 22 22 17.52 22 12S17.55 2 12.04 2zm5.66 13.54c-.24.68-1.42 1.3-1.97 1.38-.5.07-1.14.1-1.84-.12-.42-.13-.97-.31-1.67-.61-2.94-1.27-4.85-4.21-5-4.4-.15-.19-1.2-1.6-1.2-3.05s.76-2.16 1.03-2.46c.27-.3.6-.38.8-.38h.58c.18 0 .42-.07.66.5.24.57.82 2 .89 2.15.07.15.12.32.02.51-.1.19-.15.31-.3.48-.15.17-.32.38-.45.5-.15.15-.3.31-.13.6.17.29.76 1.25 1.63 2.02 1.12.99 2.07 1.3 2.36 1.44.29.15.46.12.63-.07.17-.19.73-.85.92-1.14.19-.29.38-.24.63-.15.25.1 1.6.76 1.87.9.27.14.45.21.52.32.07.11.07.65-.17 1.33z"/>
+    </svg>
+</a>
 
-    <!-- ============================= -->
-    <!-- JAVASCRIPT (BEHAVIOUR)        -->
-    <!-- ============================= -->
-    <script>
-        // Example: simple form message feedback
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            document.getElementById('formMessage').textContent = "Thank you! Your appointment request has been submitted.";
-            this.reset();
-        });
-    </script>
+<!-- ============================= -->
+<!-- JAVASCRIPT (BEHAVIOUR)        -->
+<!-- ============================= -->
+<script>
+    // Example: simple form message feedback
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        document.getElementById('formMessage').textContent = "Thank you! Your appointment request has been submitted.";
+        this.reset();
+    });
+</script>
 </body>
 </html>

@@ -59,7 +59,18 @@ class AdminLoginRequest(BaseModel):
 # Routes
 @app.get("/")
 def home():
-    return {"status": "Backend running"}
+     return {
+        "status": "ok",
+        "service": "Mimie's Hair Studio API"
+    }
+
+@app.get("/health")
+def health():
+    return {
+        "status": "healthy",
+        "env": "production"
+    }
+
 
 @app.post("/book")
 def book_appointment(appointment: Appointment):

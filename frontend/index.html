@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ============================= -->
+    <!-- BASIC PAGE METADATA           -->
+    <!-- ============================= -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mimie's Hair Studio</title>
+
+    <!-- ============================= -->
+    <!-- INTERNAL CSS (STYLING)        -->
+    <!-- ============================= -->
+    <!--
+        In real projects, CSS usually lives in its own file (style.css).
+        For learning purposes, we keep everything in one file.
+    -->
+    <style>
+        /* --------- GLOBAL STYLES --------- */
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #faf7f5;
+            color: #333;
+        }
+
+        h1, h2, h3 {
+            margin: 0;
+            font-weight: 600;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* --------- HEADER / NAVBAR --------- */
+        header {
+            background-color: #2f1c1c;
+            color: white;
+            padding: 16px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav a {
+            margin-left: 20px;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* --------- HERO SECTION --------- */
+        .hero {
+            height: 80vh;
+            background-image: url('https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-overlay {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 40px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            background-color: #c89b6d;
+            padding: 12px 24px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background-color: #b0855b;
+        }
+
+        /* --------- SECTION LAYOUT --------- */
+        section {
+            padding: 60px 40px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        /* --------- SERVICES --------- */
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .service-card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        /* --------- GALLERY --------- */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .gallery img {
+            width: 100%;
+            border-radius: 6px;
+        }
+
+        /* --------- CONTACT --------- */
+        .contact-form {
+            max-width: 500px;
+            margin-top: 30px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #2f1c1c;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #4a2b2b;
+        }
+
+        /* --------- FOOTER --------- */
+        footer {
+            background-color: #2f1c1c;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================= -->
+    <!-- HEADER / NAVIGATION           -->
+    <!-- ============================= -->
+    <header>
+        <h2>Mimie's Hair Studio </h2>
+        <nav>
+            <a href="#services">Services</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- ============================= -->
+    <!-- HERO SECTION                  -->
+    <!-- ============================= -->
+    <div class="hero">
+        <div class="hero-overlay">
+            <h1>Feel Beautiful Every Day</h1>
+            <p>Professional styling, braids & treatments</p>
+            <a class="btn" href="#contact">Book Appointment</a>
+        </div>
+    </div>
+
+    <!-- ============================= -->
+    <!-- SERVICES SECTION              -->
+    <!-- ============================= -->
+    <section id="services">
+        <h2>Our Services</h2>
+        <div class="services">
+            <div class="service-card">
+                <h3>Hair Styling</h3>
+                <p>Modern cuts and styling for all occasions.</p>
+            </div>
+            <div class="service-card">
+                <h3>Braids & Weaves</h3>
+                <p>Protective styles done with care and precision.</p>
+            </div>
+            <div class="service-card">
+                <h3>Treatments</h3>
+                <p>Healthy hair treatments for growth and shine.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================= -->
+    <!-- GALLERY SECTION               -->
+    <!-- ============================= -->
+    <section id="gallery">
+        <h2>Our Work</h2>
+        <div class="gallery">
+            <img src="https://images.unsplash.com/photo-1519741497674-611481863552" alt="Hair style example">
+            <img src="https://images.unsplash.com/photo-1526045478516-99145907023c" alt="Hair braids">
+            <img src="https://images.unsplash.com/photo-1520975916090-3105956dac38" alt="Hair salon">
+            <img src="https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb" alt="Hair treatment">
+        </div>
+    </section>
+
+    <!-- ============================= -->
+    <!-- CONTACT SECTION               -->
+    <!-- ============================= -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Book your appointment or ask a question below.</p>
+
+        <form class="contact-form">
+        <!-- Customer name -->
+        <input
+            id="name"
+            type="text"
+            placeholder="Your Name"
+            required
+        >
+
+        <!-- Customer email -->
+        <input
+            id="email"
+            type="email"
+            placeholder="Your Email"
+            required
+        >
+
+        <!-- Service selection -->
+        <select id="service" required>
+            <option value="">Select Service</option>
+            <option value="Hair Styling">Hair Styling</option>
+            <option value="Braids & Weaves">Braids & Weaves</option>
+            <option value="Treatment">Treatment</option>
+        </select>
+
+        <!-- Appointment date -->
+        <input
+            id="date"
+            type="date"
+            required
+        >
+
+        <!-- Appointment time -->
+        <input
+            id="time"
+            type="time"
+            required
+        >
+
+        <!-- Submit button -->
+        <button type="submit">Book Appointment</button>
+    </form>
+
+    </section>
+
+    <!-- ============================= -->
+    <!-- FOOTER                        -->
+    <!-- ============================= -->
+    <footer>
+        <p>&copy; 2025 Mimie's Hair Studio. All rights reserved.</p>
+    </footer>
+
+    <!-- ============================= -->
+    <!-- JAVASCRIPT (BEHAVIOUR)        -->
+    <!-- ============================= -->
+    <!--
+        JavaScript goes at the bottom so that the HTML loads first.
+        This is where interactivity lives (forms, animations, clicks).
+    -->
+<script src="script.js"></script>
+</body>
+</html>
++

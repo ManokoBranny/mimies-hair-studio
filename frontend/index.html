@@ -118,14 +118,24 @@
         /* --------- GALLERY --------- */
         .gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
             margin-top: 30px;
         }
 
         .gallery img {
             width: 100%;
-            border-radius: 6px;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .gallery img:hover {
+            transform: translateY(-6px) scale(1.02);
+            box-shadow: 0 14px 30px rgba(0,0,0,0.18);
         }
 
         /* --------- CONTACT --------- */
@@ -134,7 +144,7 @@
             margin-top: 30px;
         }
 
-        input, textarea {
+        input, textarea, select {
             width: 100%;
             padding: 10px;
             margin-bottom: 15px;
@@ -164,6 +174,30 @@
             padding: 20px;
             margin-top: 60px;
         }
+
+        /* --------- WHATSAPP FLOAT BUTTON --------- */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
     </style>
 </head>
 <body>
@@ -172,7 +206,7 @@
     <!-- HEADER / NAVIGATION           -->
     <!-- ============================= -->
     <header>
-        <h2>Mimie's Hair Studio </h2>
+        <h2>Mimie's Hair Studio</h2>
         <nav>
             <a href="#services">Services</a>
             <a href="#gallery">Gallery</a>
@@ -218,10 +252,10 @@
     <section id="gallery">
         <h2>Our Work</h2>
         <div class="gallery">
-            <img src="https://images.unsplash.com/photo-1519741497674-611481863552" alt="Hair style example">
-            <img src="https://images.unsplash.com/photo-1526045478516-99145907023c" alt="Hair braids">
-            <img src="https://images.unsplash.com/photo-1520975916090-3105956dac38" alt="Hair salon">
-            <img src="https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb" alt="Hair treatment">
+            <img src="images/tribal_braids.jpeg" alt="Braided hairstyle">
+            <img src="images/straight_up_hairstyle.jpeg" alt="Natural hairstyle">
+            <img src="images/polygel_square shape_nail_type.jpeg" alt="Nail art design">
+            <img src="images/buff_and_shine.jpeg" alt="Manicure design">
         </div>
     </section>
 
@@ -233,48 +267,29 @@
         <p>Book your appointment or ask a question below.</p>
 
         <form class="contact-form">
-        <!-- Customer name -->
-        <input
-            id="name"
-            type="text"
-            placeholder="Your Name"
-            required
-        >
+            <!-- Customer name -->
+            <input id="name" type="text" placeholder="Your Name" required>
 
-        <!-- Customer email -->
-        <input
-            id="email"
-            type="email"
-            placeholder="Your Email"
-            required
-        >
+            <!-- Customer email -->
+            <input id="email" type="email" placeholder="Your Email" required>
 
-        <!-- Service selection -->
-        <select id="service" required>
-            <option value="">Select Service</option>
-            <option value="Hair Styling">Hair Styling</option>
-            <option value="Braids & Weaves">Braids & Weaves</option>
-            <option value="Treatment">Treatment</option>
-        </select>
+            <!-- Service selection -->
+            <select id="service" required>
+                <option value="">Select Service</option>
+                <option value="Hair Styling">Hair Styling</option>
+                <option value="Braids & Weaves">Braids & Weaves</option>
+                <option value="Treatment">Treatment</option>
+            </select>
 
-        <!-- Appointment date -->
-        <input
-            id="date"
-            type="date"
-            required
-        >
+            <!-- Appointment date -->
+            <input id="date" type="date" required>
 
-        <!-- Appointment time -->
-        <input
-            id="time"
-            type="time"
-            required
-        >
+            <!-- Appointment time -->
+            <input id="time" type="time" required>
 
-        <!-- Submit button -->
-        <button type="submit">Book Appointment</button>
-    </form>
-
+            <!-- Submit button -->
+            <button type="submit">Book Appointment</button>
+        </form>
     </section>
 
     <!-- ============================= -->
@@ -285,13 +300,24 @@
     </footer>
 
     <!-- ============================= -->
+    <!-- WHATSAPP BOOKING BUTTON       -->
+    <!-- ============================= -->
+    <a
+        href="https://wa.me/277XXXXXXXX?text=Hi%20I’d%20like%20to%20book%20an%20appointment"
+        class="whatsapp-float"
+        target="_blank"
+        aria-label="Chat on WhatsApp"
+    >
+        💬
+    </a>
+
+    <!-- ============================= -->
     <!-- JAVASCRIPT (BEHAVIOUR)        -->
     <!-- ============================= -->
     <!--
         JavaScript goes at the bottom so that the HTML loads first.
         This is where interactivity lives (forms, animations, clicks).
     -->
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
-+

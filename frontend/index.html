@@ -6,20 +6,30 @@
     <!-- ============================= -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mimie's Hair Studio</title>
+    <title>LacyOva Hair Studio</title>
+    
+    <!-- ============================= -->
+    <!-- FAVICON                       -->
+    <!-- ============================= -->
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+    <!-- ============================= -->
+    <!-- GOOGLE FONTS                   -->
+    <!-- ============================= -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- ============================= -->
     <!-- INTERNAL CSS (STYLING)        -->
     <!-- ============================= -->
-    <!--
-        In real projects, CSS usually lives in its own file (style.css).
-        For learning purposes, we keep everything in one file.
-    -->
     <style>
         /* --------- GLOBAL STYLES --------- */
+        html {
+            scroll-behavior: smooth; /* Smooth scrolling for nav links */
+        }
+
         body {
             margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: 'Poppins', Arial, Helvetica, sans-serif;
             background-color: #faf7f5;
             color: #333;
         }
@@ -115,6 +125,39 @@
             text-align: center;
         }
 
+        /* --------- TRUST SIGNALS --------- */
+        #trust-signals h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #2f1c1c;
+            font-size: 28px;
+        }
+
+        .trust {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .trust-card {
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .trust-card h3 {
+            margin-bottom: 8px;
+            font-size: 18px;
+            color: #2f1c1c;
+        }
+
+        .trust-card p {
+            font-size: 14px;
+            color: #666;
+        }
+
         /* --------- GALLERY --------- */
         .gallery {
             display: grid;
@@ -123,19 +166,67 @@
             margin-top: 30px;
         }
 
-        .gallery img {
-            width: 100%;
-            height: 280px;
-            object-fit: cover;
-            border-radius: 12px;
+        .gallery-item {
+            background-color: white;
+            border-radius: 14px;
+            overflow: hidden;
             box-shadow: 0 8px 20px rgba(0,0,0,0.12);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
+            position: relative;
         }
 
-        .gallery img:hover {
-            transform: translateY(-6px) scale(1.02);
+        .gallery-item:hover {
+            transform: translateY(-6px);
             box-shadow: 0 14px 30px rgba(0,0,0,0.18);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+        }
+
+        /* Gallery caption hover effect */
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.6);
+            color: white;
+            font-size: 14px;
+            padding: 10px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            text-align: center;
+        }
+
+        .gallery-item:hover .gallery-caption {
+            opacity: 1;
+        }
+
+        /* --------- VISIT US SECTION --------- */
+        #visit-us {
+            font-family: 'Poppins', sans-serif;
+            background-color:#f4f4f4; 
+            padding:50px 40px; 
+            text-align:center; 
+            border-radius:12px; 
+            margin:40px auto; 
+            max-width:800px;
+        }
+
+        #visit-us h2 {
+            font-weight:700; 
+            font-size:28px; 
+            color:#2f1c1c; 
+            margin-bottom:15px;
+        }
+
+        #visit-us p {
+            font-size:16px; 
+            color:#555; 
+            line-height:1.6;
         }
 
         /* --------- CONTACT --------- */
@@ -175,6 +266,11 @@
             margin-top: 60px;
         }
 
+        footer a {
+            color: #ccc;
+            text-decoration: underline;
+        }
+
         /* --------- WHATSAPP FLOAT BUTTON --------- */
         .whatsapp-float {
             position: fixed;
@@ -198,6 +294,16 @@
         .whatsapp-float:hover {
             transform: scale(1.1);
         }
+
+        /* --------- RESPONSIVE TWEAKS --------- */
+        @media (max-width: 500px) {
+            section {
+                padding: 40px 20px;
+            }
+            .hero h1 {
+                font-size: 36px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -206,10 +312,12 @@
     <!-- HEADER / NAVIGATION           -->
     <!-- ============================= -->
     <header>
-        <h2>Mimie's Hair Studio</h2>
+        <h2>LacyOva's Hair Studio</h2>
         <nav>
             <a href="#services">Services</a>
+            <a href="#trust-signals">Why Choose Us</a>
             <a href="#gallery">Gallery</a>
+            <a href="#visit-us">Visit Us</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
@@ -247,16 +355,67 @@
     </section>
 
     <!-- ============================= -->
+    <!-- TRUST SIGNALS SECTION         -->
+    <!-- ============================= -->
+    <section id="trust-signals">
+        <h2>Why Choose Us</h2>
+        <div class="trust">
+            <div class="trust-card">
+                <h3>5+ Years Experience</h3>
+                <p>Trusted hands with proven results</p>
+            </div>
+            <div class="trust-card">
+                <h3>Happy Clients</h3>
+                <p>Returning customers & referrals</p>
+            </div>
+            <div class="trust-card">
+                <h3>Clean & Hygienic</h3>
+                <p>Sanitised tools for every client</p>
+            </div>
+            <div class="trust-card">
+                <h3>Quality Products</h3>
+                <p>Professional-grade hair & nail care</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================= -->
     <!-- GALLERY SECTION               -->
     <!-- ============================= -->
     <section id="gallery">
         <h2>Our Work</h2>
         <div class="gallery">
-            <img src="images/tribal_braids.jpg" alt="Braided hairstyle">
-            <img src="images/straight_up_hairstyle.jpg" alt="Natural hairstyle">
-            <img src="images/polygel_square shape_nail_type.jpeg" alt="Nail art design">
-            <img src="images/buff_and_shine.jpeg" alt="Manicure design">
+            <div class="gallery-item">
+                <img src="images/tribal_braids.jpg" alt="Braided hairstyle">
+                <div class="gallery-caption">Tribal Braids · Neat & long-lasting</div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/straight_up_hairstyle.jpg" alt="Natural hairstyle">
+                <div class="gallery-caption">Straight-Up Style · Clean finish</div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/polygel_square shape_nail_type.jpeg" alt="Nail art design">
+                <div class="gallery-caption">Polygel Nails · Square shape</div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/buff_and_shine.jpeg" alt="Manicure design">
+                <div class="gallery-caption">Buff & Shine · Natural glow</div>
+            </div>
         </div>
+    </section>
+
+    <!-- ============================= -->
+    <!-- VISIT US SECTION              -->
+    <!-- ============================= -->
+    <section id="visit-us">
+        <h2>Visit Us</h2>
+        <p>
+            📍 Based in <strong>882 G Section, Botshabelo, Free State</strong>.<br>
+            Easy bookings · Friendly service · Local clients welcome.
+        </p>
     </section>
 
     <!-- ============================= -->
@@ -266,29 +425,19 @@
         <h2>Contact Us</h2>
         <p>Book your appointment or ask a question below.</p>
 
-        <form class="contact-form">
-            <!-- Customer name -->
+        <form class="contact-form" id="contactForm">
             <input id="name" type="text" placeholder="Your Name" required>
-
-            <!-- Customer email -->
             <input id="email" type="email" placeholder="Your Email" required>
-
-            <!-- Service selection -->
             <select id="service" required>
                 <option value="">Select Service</option>
                 <option value="Hair Styling">Hair Styling</option>
                 <option value="Braids & Weaves">Braids & Weaves</option>
-                <option value="Treatment">Treatment</option>
+                <option value="Nail Installation">Nail Installation</option>
             </select>
-
-            <!-- Appointment date -->
             <input id="date" type="date" required>
-
-            <!-- Appointment time -->
             <input id="time" type="time" required>
-
-            <!-- Submit button -->
             <button type="submit">Book Appointment</button>
+            <p id="formMessage" style="margin-top:10px; font-size:14px; color:green;"></p>
         </form>
     </section>
 
@@ -296,28 +445,44 @@
     <!-- FOOTER                        -->
     <!-- ============================= -->
     <footer>
-        <p>&copy; 2025 Mimie's Hair Studio. All rights reserved.</p>
+        <p>&copy; 2025 LacyOva Hair Studio. All rights reserved.</p>
+        <p style="font-size:12px; color:#ccc; margin-top:8px;">
+            Website designed by <strong>Manoko Langa</strong> · 
+            <a href="mailto:manokobranny@gmail.com">manokobranny@gmail.com</a>
+        </p>
     </footer>
 
     <!-- ============================= -->
     <!-- WHATSAPP BOOKING BUTTON       -->
     <!-- ============================= -->
     <a
-        href="https://wa.me/27762939315"
+        href="https://wa.me/27629393115"
         class="whatsapp-float"
         target="_blank"
         aria-label="Chat on WhatsApp"
     >
-        💬
+        <!-- WhatsApp SVG Icon -->
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            viewBox="0 0 24 24"
+            fill="white"
+        >
+            <path d="M12.04 2C6.53 2 2 6.48 2 12c0 2.11.55 4.1 1.6 5.86L2 22l4.27-1.58A9.9 9.9 0 0 0 12.04 22C17.55 22 22 17.52 22 12S17.55 2 12.04 2zm5.66 13.54c-.24.68-1.42 1.3-1.97 1.38-.5.07-1.14.1-1.84-.12-.42-.13-.97-.31-1.67-.61-2.94-1.27-4.85-4.21-5-4.4-.15-.19-1.2-1.6-1.2-3.05s.76-2.16 1.03-2.46c.27-.3.6-.38.8-.38h.58c.18 0 .42-.07.66.5.24.57.82 2 .89 2.15.07.15.12.32.02.51-.1.19-.15.31-.3.48-.15.17-.32.38-.45.5-.15.15-.3.31-.13.6.17.29.76 1.25 1.63 2.02 1.12.99 2.07 1.3 2.36 1.44.29.15.46.12.63-.07.17-.19.73-.85.92-1.14.19-.29.38-.24.63-.15.25.1 1.6.76 1.87.9.27.14.45.21.52.32.07.11.07.65-.17 1.33z"/>
+        </svg>
     </a>
 
     <!-- ============================= -->
     <!-- JAVASCRIPT (BEHAVIOUR)        -->
     <!-- ============================= -->
-    <!--
-        JavaScript goes at the bottom so that the HTML loads first.
-        This is where interactivity lives (forms, animations, clicks).
-    -->
-    <script src="script.js"></script>
+    <script>
+        // Example: simple form message feedback
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            document.getElementById('formMessage').textContent = "Thank you! Your appointment request has been submitted.";
+            this.reset();
+        });
+    </script>
 </body>
 </html>

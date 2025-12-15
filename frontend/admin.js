@@ -1,6 +1,6 @@
 // admin.js - fetch appointments with token from sessionStorage
 
-const API_BASE_URL = "http://127.0.0.1:8000";
+const API_BASE_URL = "https://mimies-hair-studio-9.onrender.com";
 
 // Check if admin is logged in
 const token = sessionStorage.getItem('adminToken');

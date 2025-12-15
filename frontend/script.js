@@ -15,7 +15,7 @@ Think of fetch() like requests.post() in Python.
 // CONFIGURATION
 // ---------------------------------
 // Local backend URL (change this when deployed)
-const API_BASE_URL = "http://127.0.0.1:8000";
+const API_BASE_URL = "https://mimies-hair-studio-9.onrender.com";
 
 // ---------------------------------
 // FORM HANDLING

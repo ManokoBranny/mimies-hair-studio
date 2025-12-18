@@ -529,12 +529,45 @@
 <!-- JAVASCRIPT (BEHAVIOUR)        -->
 <!-- ============================= -->
 <script>
-    // Example: simple form message feedback
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
+    const API_BASE_URL = "https://mimies-hair-studio-9.onrender.com";
+
+    document.getElementById('contactForm').addEventListener('submit', async function (e) {
         e.preventDefault();
-        document.getElementById('formMessage').textContent = "Thank you! Your appointment request has been submitted.";
-        this.reset();
+
+        const payload = {
+            name: document.getElementById('name').value,
+            email: document.getElementById('email').value,
+            service: document.getElementById('service').value,
+            date: document.getElementById('date').value,
+            time: document.getElementById('time').value
+        };
+
+        try {
+            const response = await fetch(`${API_BASE_URL}/book`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(payload)
+            });
+
+            if (!response.ok) {
+                throw new Error("Booking failed");
+            }
+
+            document.getElementById('formMessage').style.color = "green";
+            document.getElementById('formMessage').textContent =
+                "Thank you! Your appointment has been booked successfully.";
+
+            this.reset();
+
+        } catch (error) {
+            document.getElementById('formMessage').style.color = "red";
+            document.getElementById('formMessage').textContent =
+                "Something went wrong. Please try again.";
+        }
     });
 </script>
+
 </body>
 </html>
